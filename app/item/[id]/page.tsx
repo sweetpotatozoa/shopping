@@ -1,10 +1,11 @@
-import { useCart } from '../../CartContext'; // Context에서 상품 목록 가져오기
-import { notFound } from 'next/navigation';
-import AddToCart from '../../components/item/AddToCart';
+'use client'; // 클라이언트 컴포넌트로 변경
 
-// 개별 아이템 세부 페이지 (서버 컴포넌트)
+import { items } from '../../CartContext'; // useCart를 통해 items 가져오기
+import { notFound } from 'next/navigation';
+import AddToCart from '../../components/item/AddToCart'; // 클라이언트 컴포넌트
+
+// 개별 아이템 세부 페이지 (클라이언트 컴포넌트)
 export default function ItemDetail({ params }: { params: { id: string } }) {
-    const { items } = useCart(); // 상품 목록 가져오기
     const item = items.find((item) => item.id.toString() === params.id);
 
     if (!item) {

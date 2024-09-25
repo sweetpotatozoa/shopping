@@ -1,18 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { Item } from './CartContext'; // Item 타입 가져오기
-import { useCart } from './CartContext'; // useCart 훅 가져오기
+import { items } from './CartContext'; // Context에서 items 직접 가져오기
 import Link from 'next/link';
 
 export default function Home() {
-    const [items, setItems] = useState<Item[]>([]);
-
-    useEffect(() => {
-        const fetchedItems = getItems();
-        setItems(fetchedItems);
-    }, []);
-
     return (
         <div className="w-full h-[600px] flex-col overflow-scroll scrollbar-none">
             {items.map((item) => (

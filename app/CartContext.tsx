@@ -11,7 +11,7 @@ export interface Item {
     description: string;
 }
 
-const items: Item[] = [
+export const items: Item[] = [
     {
         id: 1,
         name: '사과',
