@@ -1,11 +1,23 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getItems, Item } from './store';
+import { Item } from './CartContext'; // Item 타입 가져오기
+import { useCart } from './CartContext'; // useCart 훅 가져오기
 import Link from 'next/link';
+
+const getItems = (): Item[] => [
+    {
+        id: 1,
+        name: '사과',
+        image: 'https://example.com/apple.jpg',
+        price: 1000,
+        description: '맛있는 사과',
+    },
+];
 
 export default function Home() {
     const [items, setItems] = useState<Item[]>([]);
+    const { addToCart } = useCart(); // 장바구니 추가 함수 가져오기
 
     useEffect(() => {
         const fetchedItems = getItems();
