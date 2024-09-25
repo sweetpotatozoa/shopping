@@ -1,9 +1,6 @@
 // app/items/[id]/ClientAddToCart.tsx
 'use client'; // 클라이언트 컴포넌트
 
-import { useStore } from '../../store';
-import { Item } from '../../store';
-
 export default function ClientAddToCart({ item }: { item: Item }) {
     const { addToCart } = useStore(); // Zustand에서 가져오기
 

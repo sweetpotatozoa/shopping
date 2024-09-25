@@ -1,9 +1,9 @@
 'use client';
 
-import { useStore } from '../store';
+import { useCart } from '../CartContext'; // 장바구니 컨텍스트 훅 가져오기
 
 export default function CartPage() {
-    const { cart, removeFromCart } = useStore(); // Zustand에서 장바구니 상태와 제거 함수 가져오기
+    const { cart, removeFromCart } = useCart(); // 장바구니 상태와 제거 함수 가져오기
 
     return (
         <div className="w-full p-4">
